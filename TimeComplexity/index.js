@@ -37,3 +37,5 @@
 // O(log n) - >  searching algorithm
 
 // O(n log n) - >Some sorting algorithm
+
+// https://www.bigocheatsheet.com/
