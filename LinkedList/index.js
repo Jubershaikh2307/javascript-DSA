@@ -25,6 +25,21 @@ class LinkedList {
     this.length++;
   }
 
+  pop() {
+    if (!this.head) {
+      return null;
+    } else {
+      let temp = this.head;
+      while (temp.next.next) {
+        temp = temp.next;
+      }
+      let value = temp.next.value;
+      temp.next = null;
+      this.length--;
+      return value;
+    }
+  }
+
   print() {
     while (this.head) {
       console.log(this.head.value);
@@ -37,6 +52,16 @@ let l1 = new LinkedList();
 
 l1.push(1);
 
-l1.print();
+l1.push(2);
 
-console.log(l1);
+l1.push(3);
+
+l1.push(4);
+
+l1.push(5);
+
+l1.pop();
+
+l1.push(6);
+
+l1.print();
