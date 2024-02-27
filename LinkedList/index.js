@@ -40,6 +40,18 @@ class LinkedList {
     }
   }
 
+  unShift(value) {
+    const newNode = new Node(value);
+
+    if (!this.head) {
+      this.head = newNode;
+    } else {
+      newNode.next = this.head;
+    }
+    this.head = newNode;
+    this.length++;
+  }
+
   print() {
     while (this.head) {
       console.log(this.head.value);
@@ -50,18 +62,12 @@ class LinkedList {
 
 let l1 = new LinkedList();
 
-l1.push(1);
-
 l1.push(2);
+
+l1.unShift(1);
 
 l1.push(3);
 
-l1.push(4);
-
-l1.push(5);
-
-l1.pop();
-
-l1.push(6);
+l1.unShift(0);
 
 l1.print();
