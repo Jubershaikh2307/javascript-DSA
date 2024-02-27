@@ -94,6 +94,32 @@ class LinkedList {
     this.length++;
   }
 
+  insert(index, value) {
+    const newNode = new Node(value);
+    if (index == 0) {
+      this.unShift(value);
+    } else {
+      let temp = this.head;
+      for (let i = 0; i < index - 1; i++) {
+        temp = temp.next;
+      }
+      newNode.next = temp.next;
+      temp.next = newNode;
+    }
+  }
+
+  remove(index) {
+    if (index < 0 || index >= this.length || !this.head) {
+      return undefined;
+    } else {
+      let temp = this.head;
+      for (let i = 0; i < index - 1; i++) {
+        temp = temp.next;
+      }
+      temp.next = temp.next.next;
+    }
+  }
+
   print() {
     while (this.head) {
       console.log(this.head.value);
@@ -115,6 +141,10 @@ l1.shift();
 l1.unShift(0);
 
 l1.set(0, 5);
+
+l1.insert(2, 6);
+
+l1.remove(1);
 
 // console.log(l1.get(1));
 
