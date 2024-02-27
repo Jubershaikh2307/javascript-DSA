@@ -120,6 +120,22 @@ class LinkedList {
     }
   }
 
+  reverse() {
+    if (!this.head) {
+      return null;
+    } else {
+      let prev = null;
+      let current = this.head;
+      while (current != null) {
+        let temp = current.next;
+        current.next = prev;
+        prev = current;
+        current = temp;
+      }
+      this.head = prev;
+    }
+  }
+
   print() {
     while (this.head) {
       console.log(this.head.value);
@@ -145,6 +161,8 @@ l1.set(0, 5);
 l1.insert(2, 6);
 
 l1.remove(1);
+
+l1.reverse();
 
 // console.log(l1.get(1));
 
