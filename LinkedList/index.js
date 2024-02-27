@@ -64,6 +64,18 @@ class LinkedList {
     }
   }
 
+  get(index) {
+    if (index < 0 || index >= this.length || !this.head) {
+      return undefined;
+    } else {
+      let current = this.head;
+      for (let i = 0; i < index; i++) {
+        current = current.next;
+      }
+      return current.value;
+    }
+  }
+
   print() {
     while (this.head) {
       console.log(this.head.value);
@@ -83,5 +95,7 @@ l1.push(3);
 l1.shift();
 
 l1.unShift(0);
+
+console.log(l1.get(1));
 
 l1.print();
