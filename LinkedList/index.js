@@ -52,6 +52,18 @@ class LinkedList {
     this.length++;
   }
 
+  shift() {
+    if (!this.head) {
+      return null;
+    } else {
+      let current = this.head;
+      let temp = current.value;
+      this.head = current.next;
+      this.length--;
+      return temp;
+    }
+  }
+
   print() {
     while (this.head) {
       console.log(this.head.value);
@@ -67,6 +79,8 @@ l1.push(2);
 l1.unShift(1);
 
 l1.push(3);
+
+l1.shift();
 
 l1.unShift(0);
 
