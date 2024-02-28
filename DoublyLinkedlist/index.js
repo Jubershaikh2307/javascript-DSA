@@ -37,6 +37,7 @@ class LinkedList {
       }
       let value = temp.next.value;
       temp.next = null;
+      this.length--;
       return value;
     }
   }
