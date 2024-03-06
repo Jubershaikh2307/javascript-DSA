@@ -19,5 +19,6 @@ class Tree {
     }
   }
 }
+// Working on the tree
 
 let tree = new Tree();
